@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: doc_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: document_management
+  redis:
+    image: redis
